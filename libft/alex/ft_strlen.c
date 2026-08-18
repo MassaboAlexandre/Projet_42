@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+#include <stddef.h>
+
+size_t ft_strlen(char *str)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while (str[i])
@@ -26,7 +28,7 @@ int ft_strlen(char *str)
 int main(void)
 {
     char str[] = "123456789";
-    printf("version maison : %d\n", ft_strlen(str));
+    printf("version maison : %ld\n", ft_strlen(str));
     printf("version officiel : %ld\n", strlen(str));
     return (0);
 }

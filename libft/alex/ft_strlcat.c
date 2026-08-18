@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stddef.h>
 
-int ft_strlcat(char *dest, char *src, int sized)
+size_t ft_strlcat(char *dest, char *src, size_t sized)
 {
-    int i;
-    int j;
-    int k;
+    size_t i;
+    size_t j;
+    size_t k;
 
     i = 0;
     j = 0;
@@ -26,7 +26,7 @@ int ft_strlcat(char *dest, char *src, int sized)
     k = i;
     while (src[j])
     {
-        if(i < sized)
+        if(i < sized - 1)
         {
             dest[i] = src[j];
             i++;
@@ -43,9 +43,9 @@ int ft_strlcat(char *dest, char *src, int sized)
 
 int main(void)
 {
-    char bdest[] = "12345";  // pour changer dest et dest2
-    char src[] = "367822";    //pour changer seulement src
-    int sized = 8;           // pour changer seulement size
+    char bdest[] = "545";  // pour changer dest et dest2
+    char src[] = "98765";    //pour changer seulement src
+    size_t sized = 8;           // pour changer seulement size
     char    *dest;
     dest = malloc(sizeof(char) * (sized + 1));
     int i = 0;
@@ -54,20 +54,19 @@ int main(void)
         dest[i] = bdest[i];
         i++;
     }
-    printf("version maison : %d\n", ft_strlcat(dest, src, sized));
+    printf("version maison : %ld\n", ft_strlcat(dest, src, sized));
     printf("%s\n", dest);
 
-    char src2[] = "367822";  //pour changer seulement src2
-    int sized2 = 8;        // pour changer seulement size2
+    char src2[] = "98765";  //pour changer seulement src2
     char    *dest2;
-    dest2 = malloc(sizeof(char) * (sized2 + 1));
+    dest2 = malloc(sizeof(char) * (sized + 1));
     i = 0;
     while (bdest[i])
     {
         dest2[i] = bdest[i];
         i++;
     }
-    printf("version officiel : %ld\n", strlcat(dest2, src2, sized2));
+    printf("version officiel : %ld\n", strlcat(dest2, src2, sized));
     printf("%s\n", dest2);
     return (0);
 }
