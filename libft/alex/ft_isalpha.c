@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char c)
+int ft_isalpha(int c)
 {
   
     if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
@@ -23,7 +23,7 @@ int ft_isalpha(char c)
 
 int main(void)
 {
-    char   c = 'b';
+    int  c = 'a';
     printf("version maison : %d\n", ft_isalpha(c));
     printf("version officiel : %d\n", isalpha(c));
     return (0);

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_ascii(char c)
+int is_ascii(int c)
 {
     if (!(c >= 0 && c < 127))
             return(0);
@@ -22,7 +22,7 @@ int is_ascii(char c)
 
 int main(void)
 {
-    char    c = '~';
+    int   c = '~';
     printf("version maison : %d\n", is_ascii(c));
     printf("version officiel : %d\n", isascii(c));
     return (0);

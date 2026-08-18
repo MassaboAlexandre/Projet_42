@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_digit(char c)
+int is_digit(int c)
 {
     if (!(c >= '0' && c <= '9'))
             return(0);
@@ -22,7 +22,7 @@ int is_digit(char c)
 
 int main(void)
 {
-    char    c = '3';
+    int    c = '3';
     printf("version maison : %d\n", is_digit(c));
     printf("version officiel : %d\n", isdigit(c));
     return (0);

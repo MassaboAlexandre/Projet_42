@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(char c)
+int ft_isalnum(int c)
 {
     if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
         || (c >= '0' && c <= '9')))
@@ -24,7 +24,7 @@ int ft_isalnum(char c)
 
 int main(void)
 {
-    char    c = '1';
+    int    c = '1';
     printf("version maison : %d\n", ft_isalnum(c));
     printf("version officiel : %d\n", isalnum(c));
     return (0);

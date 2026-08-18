@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlcpy(char *dest, char *src, int size)
+#include <stddef.h>
+
+size_t ft_strlcpy(char *dest, char *src, size_t size)
 {
-    int i;
+    size_t i;
  
     i = 0;
     while (src[i])
@@ -33,13 +35,13 @@ int ft_strlcpy(char *dest, char *src, int size)
 
 int main(void)
 {
-    int size = 5;
+    size_t size = 5;
     char    src[] = "1234aa";
     char    dest[size];
-    printf("version maison : %d\n",ft_strlcpy(dest, src, size));
+    printf("version maison : %ld\n",ft_strlcpy(dest, src, size));
    printf("%s\n", dest);
 
-    int size2 = 5;
+    size_t size2 = 5;
     char    src2[] = "1234aa";
     char    dest2[size];
     printf("version officiel : %ld\n",strlcpy(dest2, src2, size2));
