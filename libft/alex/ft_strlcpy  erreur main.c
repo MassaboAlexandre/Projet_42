@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-size_t ft_strlcpy(char *dest, char *src, size_t size)
+size_t ft_strlcpy(char * restrict dest,const char * restrict src, size_t size)
 {
     size_t i;
  
@@ -32,19 +32,22 @@ size_t ft_strlcpy(char *dest, char *src, size_t size)
 
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
     size_t size = 5;
-    char    src[] = "1234aa";
-    char    dest[size];
-    printf("version maison : %ld\n",ft_strlcpy(dest, src, size));
+   const char * restrict src = "1234aa";
+   char * restrict dest[size];
+   dest = malloc(sizeof(char) * size);
+   printf("version maison : %ld\n",ft_strlcpy(dest, src, size));
    printf("%s\n", dest);
 
-    size_t size2 = 5;
-    char    src2[] = "1234aa";
-    char    dest2[size];
-    printf("version officiel : %ld\n",strlcpy(dest2, src2, size2));
+    // size_t size2 = 5;
+    const char * restrict src2 = "1234aa";
+    char * restrict dest2;
+    dest2 = malloc(sizeof(char) * size);
+    printf("version officiel : %ld\n",strlcpy(dest2, src2, size));
     printf("%s\n", dest2);
     return (0);
 }
