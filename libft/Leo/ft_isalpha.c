@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	ft_isalpha(int	c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }
-int	main(void)
-{
-	char test = 'D';
-	printf("%d\n", ft_isalpha(test));
-}
+// int	main(void)
+// {
+// 	char test = 'D';
+// 	printf("%d\n", ft_isalpha(test));
+// }
