@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-size_t ft_strlen(char *str)
+size_t ft_strlen(const char *str)
 {
     size_t i;
 
@@ -27,7 +27,7 @@ size_t ft_strlen(char *str)
 
 int main(void)
 {
-    char str[] = "123456789";
+    const char str[] = "123456789";
     printf("version maison : %ld\n", ft_strlen(str));
     printf("version officiel : %ld\n", strlen(str));
     return (0);
