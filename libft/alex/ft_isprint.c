@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(char c)
+int ft_isprint(int c)
 {
     if (!(c >= 32 && c <= 126))
             return(0);
@@ -22,7 +22,7 @@ int ft_isprint(char c)
 
 int main(void)
 {
-    char    c = '@';
+    int    c = '@';
     printf("version maison : %d\n", ft_isprint(c));
     printf("version officiel : %d\n", isprint(c));
     return (0);
