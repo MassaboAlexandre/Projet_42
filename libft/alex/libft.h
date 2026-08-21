@@ -15,6 +15,7 @@
 
 int ft_atoi(const char *str)
 void    ft_bzero(void   *s, size_t n)
+void    *ft_calloc(size_t elementcount, size_t elementsize)
 int ft_isalnum(int c)
 int ft_isalpha(int c)
 int is_ascii(int c)
@@ -26,6 +27,7 @@ void    *ft_memcpy(void *restrict destination, const void *restrict source, size
 void    *ft_memmove(void *destination, const void *source, size_t size)
 void    *ft_memset(void *s, int value, size_t n)
 char    *ft_strchr(const char *string, int searchedChar)
+char    *ft_strdup(const char * source)
 size_t ft_strlcat(char *dest, char *src, size_t sized)
 size_t ft_strlcpy(char * restrict dest,const char * restrict src, size_t size)
 size_t ft_strlen(const char *str)
