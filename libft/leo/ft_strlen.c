@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -21,8 +21,8 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-int	main(void)
-{
-	char *str = "Bonjour";
-	printf("%lu\n", ft_strlen(str));
-}
+// int	main(void)
+// {
+// 	char *str = "Bonjour";
+// 	printf("%lu\n", ft_strlen(str));
+// }
