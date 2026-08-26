@@ -21,6 +21,8 @@ void    *ft_memmove(void *destination, const void *source, size_t size)
     i = 0;
     pointerd = (void *)destination;
     pointers = (void *)source;
+    if (size == 0)
+        return ((void *)destination);
     if (pointerd > pointers)
     {
         i = size - 1;

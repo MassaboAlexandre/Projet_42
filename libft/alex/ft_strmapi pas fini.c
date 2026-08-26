@@ -12,18 +12,15 @@
 
 #include <stdlib.h>
 
-int test_isalpha(int c)
+char ft_test(unsigned int n, char c)
 {
-  
-    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
-            return(0);
-    else 
-        return (1);
+    c = n;
+    return (c);
 }
 
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    int i;
+    unsigned int i;
     char    *res;
 
     i = 0;
@@ -52,7 +49,9 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 int main (void)
 {
-    char const  *s = ""; 
+    char const  *s = "abcdefg"; 
+    unsigned int n = 32;
     printf("avant modif : %s\n", s);
-    printf("après modif : %s\n", ft_strmapi(s, test_isalpha(int c)));
+    printf("après modif : %s\n", ft_strmapi(s, ft_test(n, char)));
+    return (0);
 }
