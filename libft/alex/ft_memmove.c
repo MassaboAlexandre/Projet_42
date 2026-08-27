@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stddef.h>
 
 void    *ft_memmove(void *destination, const void *source, size_t size)
@@ -28,8 +29,8 @@ void    *ft_memmove(void *destination, const void *source, size_t size)
         i = size - 1;
         while(0 < i)
         {
-            pointerd[i] = pointers[i];
             i--;
+            pointerd[i] = pointers[i];
         }
         return ((void *)destination);
     }
@@ -43,7 +44,7 @@ void    *ft_memmove(void *destination, const void *source, size_t size)
 }
 
 #include <string.h>
-#include <stdio.h>
+// #include <stdio.h>
 
 int main (void)
 {
