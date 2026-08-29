@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
 char	*ft_strchr(const char *str, int c)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 	{
@@ -27,8 +27,8 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)&str[i]);
 	return (NULL);
 }
-int	main(void)
-{
-	char *str = "Bonjour";
-	printf("%s\n", ft_strchr(str, 'j'));
-}
+// int	main(void)
+// {
+// 	char *str = "Bonjour";
+// 	printf("%s\n", ft_strchr(str, 'j'));
+// }
