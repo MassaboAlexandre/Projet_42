@@ -6,11 +6,12 @@
 /*   By: leode-fr <leode-fr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 15:45:26 by leode-fr          #+#    #+#             */
-/*   Updated: 2026/08/28 00:43:59 by leode-fr         ###   ########.fr       */
+/*   Updated: 2026/08/29 14:30:15 by leode-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

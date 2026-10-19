@@ -6,11 +6,12 @@
 /*   By: leode-fr <leode-fr@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 00:36:00 by leode-fr          #+#    #+#             */
-/*   Updated: 2026/08/28 01:05:29 by leode-fr         ###   ########.fr       */
+/*   Updated: 2026/10/02 15:43:43 by leode-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
@@ -31,7 +32,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 // {
 // 	char *str = "Bonjour";
 // 	char *chr;
-// 	chr = ft_memchr(str, 'r', 10);
+// 	chr = ft_memchr(str, 'o', 8);
 // 	if(chr == NULL)
 // 		printf("NULL\n");
 // 	else

@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 // #include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
 	size_t	i;
 	int		sum;
-	int		rslt;
+	long	rslt;
 
 	rslt = 0;
 	sum = 1;
@@ -37,11 +38,11 @@ int	ft_atoi(const char *str)
 		rslt = rslt + (str[i] - '0');
 		i++;
 	}
-	return (sum * rslt);
+	return ((int)(sum * rslt));
 }
 // int main(void)
 // {
-// 	char *str = "      +134599";
+// 	char *str = "      -2147483648";
 // 	int i = ft_atoi(str);
 // 	printf("%d\n", i);
 // }

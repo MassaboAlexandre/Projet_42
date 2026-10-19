@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *restrict dest, const char *restrict src, size_t n)
 {
@@ -32,14 +33,16 @@ size_t	ft_strlcat(char *restrict dest, const char *restrict src, size_t n)
 		}
 		i++;
 	}
-	if (len_dest < n)
+	if (len < n)
 		dest[j] = '\0';
+	if (n <= len)
+		return (n + i);
 	return (i + len);
 }
-// int main(void)
-// {
-// 	char *str = "Marju";
-// 	char dest[50] = "Bonjour ";
-// 	int i = ft_strlcat(dest, str, 2);
-// 	printf("%s\n%d\n", dest, i);
-// }
+int main(void)
+{
+	char *str = "Marju";
+	char dest[50] = "Bonjour ";
+	int i = ft_strlcat(dest, str, 50);
+	printf("%s\n%d\n", dest, i);
+}
