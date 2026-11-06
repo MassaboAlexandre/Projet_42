@@ -10,105 +10,105 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-# include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-char    *ft_substr(char const *s, unsigned int start, size_t len);
-size_t  ft_strlen(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlen(const char *s);
 
-static int cw(const char *s1, char c, int len)
+static int	cw(const char *s1, char c, int len)
 {
-    int i;
-    int detect;
+	int	i;
+	int	detect;
 
-    i = 0;
-    detect = 0;
-    while (i < len && s1[i] != '\0')
-    {
-        while (i < len && s1[i] == c)
-            i++;
-        if (i < len && s1[i] != '\0')
-        {
-            detect++;
-            while (i < len && s1[i] != c && s1[i] != '\0')
-                i++;
-        }
-    }
-    return (detect);
+	i = 0;
+	detect = 0;
+	while (i < len && s1[i] != '\0')
+	{
+		while (i < len && s1[i] == c)
+			i++;
+		if (i < len && s1[i] != '\0')
+		{
+			detect++;
+			while (i < len && s1[i] != c && s1[i] != '\0')
+				i++;
+		}
+	}
+	return (detect);
 }
 
-static int selectW(const char *s1, char c, int len, int select)
+static int	select_w(const char *s1, char c, int len, int select)
 {
-    int i;
-    int detect;
+	int	i;
+	int	detect;
 
-    i = 0;
-    detect = 0;
-    while (i < len)
-    {
-        while (i < len && s1[i] == c)
-            i++;
-        if (i < len)
-        {
-            if (detect == select)
-                return (i);
-            detect++;
-            while (i < len && s1[i] != c)
-                i++;
-        }
-    }
-    return (i);
+	i = 0;
+	detect = 0;
+	while (i < len)
+	{
+		while (i < len && s1[i] == c)
+			i++;
+		if (i < len)
+		{
+			if (detect == select)
+				return (i);
+			detect++;
+			while (i < len && s1[i] != c)
+				i++;
+		}
+	}
+	return (i);
 }
 
-static int lenwd(const char *s, char c, int start)
+static int	lenwd(const char *s, char c, int start)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[start] != c && s[start] != '\0')  
-    {
-        i++;
-        start++;
-    }
-    return (i);
+	i = 0;
+	while (s[start] != c && s[start] != '\0')
+	{
+		i++;
+		start++;
+	}
+	return (i);
 }
 
-static void    freetab(char **bigtab, int i)
+static void	freetab(char **bigtab, int i)
 {
-    while (i > 0)
-            {
-                i--;                               
-                free(bigtab[i]);
-            }
-            free(bigtab);  
+	while (i > 0)
+	{
+		i--;
+		free(bigtab[i]);
+	}
+	free(bigtab);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    int     i;
-    int     cws;
-    char    **bigtab;
+	int		i;
+	int		cws;
+	char	**bigtab;
 
-    i = 0;
-    if (s == NULL)
-        return (NULL);
-    cws = cw(s, c, ft_strlen(s));
-    bigtab = malloc(sizeof(char *) * (cws + 1));   
-    if (bigtab == NULL)
-        return (NULL);
-    while (i < cws)                                
-    {
-        bigtab[i] = ft_substr(s, selectW(s, c, ft_strlen(s), i),
-                lenwd(s, c, selectW(s, c, ft_strlen(s), i)));
-        if (bigtab[i] == NULL)
-        {
-            freetab(bigtab, i);
-            return (NULL);
-        }
-        i++;
-    }
-    bigtab[cws] = NULL;
-    return (bigtab);
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	cws = cw(s, c, ft_strlen(s));
+	bigtab = malloc(sizeof(char *) * (cws + 1));
+	if (bigtab == NULL)
+		return (NULL);
+	while (i < cws)
+	{
+		bigtab[i] = ft_substr(s, select_w(s, c, ft_strlen(s), i),
+				lenwd(s, c, select_w(s, c, ft_strlen(s), i)));
+		if (bigtab[i] == NULL)
+		{
+			freetab(bigtab, i);
+			return (NULL);
+		}
+		i++;
+	}
+	bigtab[cws] = NULL;
+	return (bigtab);
 }
 
 // int main(void)
@@ -118,7 +118,7 @@ char **ft_split(char const *s, char c)
 //     char        c = '\0';
 //     char        **tab;
 //     int         i;
-//     int         len = ft_strlen(s);              
+//     int         len = ft_strlen(s);
 //     i = 0;
 //     printf("s = %s \n c = %c\n ", s, c);
 //     tab = ft_split(s, c);
@@ -127,7 +127,7 @@ char **ft_split(char const *s, char c)
 //     cws = cw(s, c, len);
 //     printf("cw = %d \n", cws);
 //     printf("strlen %d\n", len);
-//     while (tab[i])                                
+//     while (tab[i])
 //     {
 //         printf("%d mots : %s \n", i, tab[i]);
 //         free(tab[i]);
