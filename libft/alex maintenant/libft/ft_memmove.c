@@ -12,37 +12,35 @@
 
 #include "libft.h"
 
-void    *ft_memmove(void *dest, const void *src, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-    size_t i;
-    unsigned char *s1;
-    unsigned char *s2;
-    
-    s1 = (void *)dest;
-    s2 = (void *)src;
-    i = 0;
+	size_t			i;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
-    if (s1 > s2)
-    {
-        while (size > 0)
-        {
-            s1[size - 1] = s2[size - 1];
-            size--;
-        }
-    }
-    else
-    {
-        while (i < size)
-        {
-            s1[i] = s2[i];
-            i++;
-        }
-    }
-    return ((void *)dest);
+	s1 = (void *)dest;
+	s2 = (void *)src;
+	i = 0;
+	if (s1 > s2)
+	{
+		while (size > 0)
+		{
+			s1[size - 1] = s2[size - 1];
+			size--;
+		}
+	}
+	else
+	{
+		while (i < size)
+		{
+			s1[i] = s2[i];
+			i++;
+		}
+	}
+	return ((void *)dest);
 }
 
 // #include <stdio.h>
-
 
 // int main(void)
 // {
@@ -53,5 +51,5 @@ void    *ft_memmove(void *dest, const void *src, size_t size)
 //     memmove(dest2, dest + 4, 10);
 //     printf("maison : %s\n", dest);
 //     printf("officiel : %s\n", dest2);
-    
+
 // }

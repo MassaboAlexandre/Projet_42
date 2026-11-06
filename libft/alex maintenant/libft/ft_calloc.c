@@ -13,23 +13,23 @@
 #include "libft.h"
 #include <stdint.h>
 
-void    *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    size_t i; 
-    unsigned char *tab;
+	size_t			i;
+	unsigned char	*tab;
 
-    i = 0;
-    if (count > SIZE_MAX / size)
-        return (NULL);
-    tab = malloc (sizeof(char) * count * size);
-    if (tab == NULL)
-	    return (NULL);
-    while (i < count * size)
-    {
-        tab[i] = 0;
-        i++;
-    }
-    return ((void *)tab);
+	i = 0;
+	if (count > SIZE_MAX / size)
+		return (NULL);
+	tab = malloc (sizeof(char) * count * size);
+	if (tab == NULL)
+		return (NULL);
+	while (i < count * size)
+	{
+		tab[i] = 0;
+		i++;
+	}
+	return ((void *)tab);
 }
 
 // int main(void)
